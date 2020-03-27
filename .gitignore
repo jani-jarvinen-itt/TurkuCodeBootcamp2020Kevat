@@ -1,0 +1,6 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Ohjelmalogiikkaa/.vs/Ohjelmalogiikkaa/v16
+/Ohjelmalogiikkaa/Ohjelmalogiikkaa/obj
