@@ -6,15 +6,31 @@ namespace Ohjelmalogiikkaa
     {
         static void Main(string[] args)
         {
+            // pelivakiot
+            const int SuurinLuku = 20;
+            const int ArvauskertojenMaksimiMäärä = 5;
+
+            // aloitetaan peli ja arvotaan oikea numero
             Console.WriteLine("Arvaa luku -peli alkaa.");
             Random satunnaisluku = new Random();
-            int oikea = satunnaisluku.Next(1, 20 + 1);
+            int oikea = satunnaisluku.Next(1, SuurinLuku + 1);
             // Console.WriteLine("Oikea: " + oikea);
 
-            for (int arvauskerrat = 1; arvauskerrat <= 5; arvauskerrat++)
+            // aloitetaan silmukka, jossa kysytään pelaajan arvaukset
+            for (int arvauskerrat = 1; arvauskerrat <= ArvauskertojenMaksimiMäärä; arvauskerrat++)
             {
-                Console.WriteLine("Anna arvauksesi välillä 1-20:");
-                int arvaus = int.Parse(Console.ReadLine());
+                // kysytään numeerista syötettä niin kauan kunnes syöte on numero
+                int arvaus;
+                bool numeerinen;
+                do
+                {
+                    Console.WriteLine($"Anna arvauksesi välillä 1-{SuurinLuku}:");
+                    string syöte = Console.ReadLine();
+                    numeerinen = int.TryParse(syöte, out arvaus);
+                }
+                while (!numeerinen);    // while (numeerinen == false);
+
+                // tarkistetaan, arvasiko pelaaja oikein
                 if (arvaus < oikea)
                 {
                     Console.WriteLine("Oikea luku on suurempi.");
