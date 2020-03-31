@@ -12,13 +12,37 @@ namespace OlioOhjelmointi
         {
             Console.WriteLine("Hello World!");
 
+            DateTime nyt = DateTime.Now;
+            DateTime utcAika = DateTime.UtcNow;
+
+            Console.WriteLine(nyt);
+            Console.WriteLine(utcAika);
+
+            CultureInfo enUs = new CultureInfo("en-US");
+            Console.WriteLine("-----");
+            Console.WriteLine(nyt.ToString(enUs));
+
+            CultureInfo es = new CultureInfo("es");
+            CultureInfo en = new CultureInfo("en-GB");
+            CultureInfo fr = new CultureInfo("fr");
+            CultureInfo dk = new CultureInfo("dk");
+            CultureInfo de = new CultureInfo("de");
+            Console.WriteLine("ES: " + nyt.ToString(es));
+            Console.WriteLine("EN: " + nyt.ToString(en));
+            Console.WriteLine("FR: " + nyt.ToString(fr));
+            Console.WriteLine("DK: " + nyt.ToString(dk));
+            Console.WriteLine("DE: " + nyt.ToString(de));
+
+            Console.ReadLine();
+
+            /*
             Console.WriteLine("Anna desimaaliluku:");
             CultureInfo enUs = new CultureInfo("en-US");
             string syöte = Console.ReadLine();
             float luku = float.Parse(syöte, enUs);
             Console.WriteLine(luku.ToString(enUs));
+            */
 
-            Console.ReadLine();
 
             // float luku2 = 123.45f;
 
