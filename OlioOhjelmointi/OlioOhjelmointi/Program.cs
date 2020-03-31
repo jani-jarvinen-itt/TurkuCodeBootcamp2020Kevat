@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
+using System.Linq;
 
 namespace OlioOhjelmointi
 {
@@ -12,7 +13,31 @@ namespace OlioOhjelmointi
         {
             Console.WriteLine("Hello World!");
 
-            LaskeNumeroidenSumma();
+            // List<int> luvut = new List<int>(new int[] { 1, 2, 3, 4, 5 });
+            List<Auto> autot = new List<Auto>();
+
+            autot.Add(new Auto()
+            {
+                Väri = "Sininen",
+                Huippunopeus = 250,
+                MoottoriKäynnissä = false
+            });
+            autot.Add(new Auto()
+            {
+                Väri = "Harmaa",
+                Huippunopeus = 220,
+                MoottoriKäynnissä = false
+            });
+
+            autot.RemoveAt(0);
+
+            autot.Add(new KuormaAuto()
+            {
+                Väri = "Valkoinen",
+                Kantavuus = 25
+            });
+
+            // LaskeNumeroidenSumma();
 
             /*
             FileStream virta = new FileStream("C:\\Temp\\Päivämäärä.txt",
