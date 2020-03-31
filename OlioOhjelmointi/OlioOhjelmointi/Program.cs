@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -10,6 +11,43 @@ namespace OlioOhjelmointi
         {
             Console.WriteLine("Hello World!");
 
+            /*
+            string nimi = "Jaska Jokunen";
+            char merkki = 'A';
+
+            nimi = nimi + "!";
+            Console.WriteLine(nimi);
+            */
+
+            /*
+            Console.WriteLine("Aloitetaan merkkijonon muodostaminen...");
+            DateTime alku = DateTime.Now;
+            string html = "<table class=\"table...\">";
+            for (int i = 0; i < 100000; i++)
+            {
+                html += "<tr><td>Testi</td><td>...</td></tr>";
+            }
+            DateTime loppu = DateTime.Now;
+            Console.WriteLine("Merkkijono on valmis, pituus = " + html.Length);
+            double sekunnit = (loppu - alku).TotalSeconds;
+            Console.WriteLine("Operaatio kesti: " + sekunnit + " sekuntia.");
+            */
+
+            Console.WriteLine("Aloitetaan merkkijonon muodostaminen StringBuilderilla...");
+            DateTime alku = DateTime.Now;
+            StringBuilder html = new StringBuilder("<table class=\"table...\">");
+            for (int i = 0; i < 100000; i++)
+            {
+                html.Append("<tr><td>Testi</td><td>...</td></tr>");
+            }
+            string lopullinenHtml = html.ToString();
+            DateTime loppu = DateTime.Now;
+            Console.WriteLine("Merkkijono on valmis, pituus = " + lopullinenHtml.Length);
+            double sekunnit = (loppu - alku).TotalSeconds;
+            Console.WriteLine("Operaatio kesti: " + sekunnit + " sekuntia.");
+
+
+            /*
             byte b1 = 250;
             byte b2 = 100;
 
@@ -19,6 +57,17 @@ namespace OlioOhjelmointi
             byte summa2 = (byte)(b1 + b2); // tyyppimuunnos, type cast
             Console.WriteLine(summa2); // tulostaa 94
 
+            float f1 = 0.001f;
+            float f2 = 0.9876f;
+            float osamäärä = f1 / f2;
+            Console.WriteLine(osamäärä);
+
+            // liukulukujen vertailu
+            if (Math.Abs(f1-f2) < 0.0001)
+            {
+
+            }
+            */
 
             /*
             Loki.Kirjoita("Sovellus käynnistyy");
