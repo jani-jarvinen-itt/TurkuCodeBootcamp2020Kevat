@@ -12,6 +12,9 @@ namespace OlioOhjelmointi
         {
             Console.WriteLine("Hello World!");
 
+            LaskeNumeroidenSumma();
+
+            /*
             FileStream virta = new FileStream("C:\\Temp\\Päivämäärä.txt",
                 FileMode.OpenOrCreate, FileAccess.ReadWrite);
             Console.WriteLine("1: Try-lohko alkaa");
@@ -43,6 +46,7 @@ namespace OlioOhjelmointi
 
             Console.WriteLine("4: Sovellus päättyy");
             Console.ReadLine();
+            */
 
             /*
             Console.WriteLine("Anna päivämäärä ja mahdollinen kellonaika:");
@@ -203,6 +207,42 @@ namespace OlioOhjelmointi
             Loki.Kirjoita("Sovelluksen suoritus päättyy");
             Console.ReadLine();
             */
+        }
+
+        private static void LaskeNumeroidenSumma()
+        {
+            List<int> luvut = LueNumerotKäyttäjänSyötteestä();
+
+            int summa = 0;
+            foreach (int luku in luvut)
+            {
+                summa += luku;
+            }
+
+            Console.WriteLine($"Yhteensä {luvut.Count} luvun summa on {summa}.");
+        }
+
+        private static List<int> LueNumerotKäyttäjänSyötteestä()
+        {
+            List<int> luvut = new List<int>();
+            do
+            {
+                try
+                {
+                    Console.WriteLine("Anna laskettava luku tai tyhjä lopettaaksesi:");
+                    string syöte = Console.ReadLine();
+                    int luku = int.Parse(syöte);
+
+                    luvut.Add(luku);
+                }
+                catch
+                {
+                    break;
+                }
+            }
+            while (true);
+
+            return luvut;
         }
 
         static void Tulosta(Auto a)
