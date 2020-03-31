@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 
@@ -12,9 +13,10 @@ namespace OlioOhjelmointi
             Console.WriteLine("Hello World!");
 
             Console.WriteLine("Anna desimaaliluku:");
+            CultureInfo enUs = new CultureInfo("en-US");
             string syöte = Console.ReadLine();
-            float luku = float.Parse(syöte);
-            Console.WriteLine(luku);
+            float luku = float.Parse(syöte, enUs);
+            Console.WriteLine(luku.ToString(enUs));
 
             Console.ReadLine();
 
