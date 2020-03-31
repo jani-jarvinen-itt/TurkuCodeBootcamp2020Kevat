@@ -14,19 +14,31 @@ namespace OlioOhjelmointi
 
             FileStream virta = new FileStream("C:\\Temp\\Päivämäärä.txt",
                 FileMode.OpenOrCreate, FileAccess.ReadWrite);
-            byte[] tavut = Encoding.UTF8.GetBytes("Moi maailma!\r\n");
-            virta.Write(tavut);
+            Console.WriteLine("1: Try-lohko alkaa");
+            try
+            {
+                byte[] tavut = Encoding.UTF8.GetBytes("Moi maailma!\r\n");
+                virta.Write(tavut);
 
-            Console.WriteLine("Anna päivämäärä ja mahdollinen kellonaika:");
-            string syöte = Console.ReadLine();
-            DateTime pvm = DateTime.Parse(syöte);
+                Console.WriteLine("Anna päivämäärä ja mahdollinen kellonaika:");
+                string syöte = Console.ReadLine();
+                DateTime pvm = DateTime.Parse(syöte);
 
-            CultureInfo fi = new CultureInfo("fi");
-            string suomalainenPvm = pvm.ToString(fi);
-            tavut = Encoding.UTF8.GetBytes(suomalainenPvm);
-            virta.Write(tavut);
+                CultureInfo fi = new CultureInfo("fi");
+                string suomalainenPvm = pvm.ToString(fi);
+                tavut = Encoding.UTF8.GetBytes(suomalainenPvm);
+                virta.Write(tavut);
 
-            virta.Close();
+                Console.WriteLine("2: Try-lohko päättyy");
+            }
+            finally
+            {
+                Console.WriteLine("3: Finally-lohko");
+                virta.Close();
+            }
+
+            Console.WriteLine("4: Sovellus päättyy");
+            Console.ReadLine();
 
             /*
             Console.WriteLine("Anna päivämäärä ja mahdollinen kellonaika:");
