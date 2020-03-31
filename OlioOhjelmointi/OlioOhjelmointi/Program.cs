@@ -12,6 +12,19 @@ namespace OlioOhjelmointi
         {
             Console.WriteLine("Hello World!");
 
+            Console.WriteLine("Anna päivämäärä ja mahdollinen kellonaika:");
+            string syöte = Console.ReadLine();
+            Console.WriteLine("Anna maa (esim. \"fi\"):");
+            string maa = Console.ReadLine();
+
+            CultureInfo kulttuuri = new CultureInfo(maa);
+            DateTime pvm = DateTime.Parse(syöte, kulttuuri);
+            CultureInfo fi = new CultureInfo("fi");
+            Console.WriteLine(pvm.ToString(fi));
+
+            Console.ReadLine();
+
+            /*
             DateTime nyt = DateTime.Now;
             DateTime utcAika = DateTime.UtcNow;
 
@@ -32,8 +45,7 @@ namespace OlioOhjelmointi
             Console.WriteLine("FR: " + nyt.ToString(fr));
             Console.WriteLine("DK: " + nyt.ToString(dk));
             Console.WriteLine("DE: " + nyt.ToString(de));
-
-            Console.ReadLine();
+            */
 
             /*
             Console.WriteLine("Anna desimaaliluku:");
