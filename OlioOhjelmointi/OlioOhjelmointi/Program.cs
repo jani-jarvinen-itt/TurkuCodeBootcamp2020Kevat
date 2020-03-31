@@ -11,6 +11,26 @@ namespace OlioOhjelmointi
         {
             Console.WriteLine("Hello World!");
 
+            Console.WriteLine("Anna desimaaliluku:");
+            string syöte = Console.ReadLine();
+            float luku = float.Parse(syöte);
+            Console.WriteLine(luku);
+
+            Console.ReadLine();
+
+            // float luku2 = 123.45f;
+
+            /*
+            int luku1 = 123;
+            Int32 luku2 = 234;
+
+            double liuku1 = 1.234;
+            Double liuku2 = 2.345;
+
+            string merkkijono1 = "ABC";
+            String merkkijono2 = "BCD";
+            */
+
             /*
             string nimi = "Jaska Jokunen";
             char merkki = 'A';
@@ -33,6 +53,7 @@ namespace OlioOhjelmointi
             Console.WriteLine("Operaatio kesti: " + sekunnit + " sekuntia.");
             */
 
+            /*
             Console.WriteLine("Aloitetaan merkkijonon muodostaminen StringBuilderilla...");
             DateTime alku = DateTime.Now;
             StringBuilder html = new StringBuilder("<table class=\"table...\">");
@@ -45,7 +66,7 @@ namespace OlioOhjelmointi
             Console.WriteLine("Merkkijono on valmis, pituus = " + lopullinenHtml.Length);
             double sekunnit = (loppu - alku).TotalSeconds;
             Console.WriteLine("Operaatio kesti: " + sekunnit + " sekuntia.");
-
+            */
 
             /*
             byte b1 = 250;
