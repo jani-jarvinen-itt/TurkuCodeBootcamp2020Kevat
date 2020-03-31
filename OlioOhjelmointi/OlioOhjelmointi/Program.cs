@@ -31,6 +31,10 @@ namespace OlioOhjelmointi
 
                 Console.WriteLine("2: Try-lohko päättyy");
             }
+            catch
+            {
+                Console.WriteLine("2 B: Catch-lohkossa");
+            }
             finally
             {
                 Console.WriteLine("3: Finally-lohko");
