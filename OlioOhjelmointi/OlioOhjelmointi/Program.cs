@@ -37,6 +37,8 @@ namespace OlioOhjelmointi
                 Kantavuus = 25
             });
 
+            Console.ReadLine();
+
             // LaskeNumeroidenSumma();
 
             /*
