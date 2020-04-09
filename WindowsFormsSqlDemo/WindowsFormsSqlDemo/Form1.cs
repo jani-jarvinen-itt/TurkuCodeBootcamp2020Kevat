@@ -48,5 +48,36 @@ namespace WindowsFormsSqlDemo
             yhteys.Close();
             MessageBox.Show("Tietokantayhteys suljettu.");
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string yhteysmerkkijono = "Server=localhost\\SQLEXPRESS;Database=Northwind;Trusted_Connection=True;";
+            SqlConnection yhteys = new SqlConnection(yhteysmerkkijono);
+
+            yhteys.Open();
+
+            string sql = "SELECT * FROM Customers";
+            SqlCommand komento = new SqlCommand(sql, yhteys);
+
+            SqlDataReader lukija = komento.ExecuteReader();
+            List<Asiakas> asiakkaat = new List<Asiakas>();
+            while (lukija.Read())
+            {
+                Asiakas asiakas = new Asiakas()
+                {
+                    AsiakasId = lukija["CustomerID"].ToString(),
+                    Nimi = lukija["CompanyName"].ToString(),
+                    Kontaktihenkilö = lukija["ContactName"].ToString(),
+                    Maa = lukija["Country"].ToString(),
+                };
+
+                asiakkaat.Add(asiakas);
+            }
+
+            yhteys.Close();
+
+            // näytetään tulokset ruudulla
+            dataGridView1.DataSource = asiakkaat;
+        }
     }
 }
