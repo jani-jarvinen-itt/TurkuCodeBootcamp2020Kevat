@@ -26,9 +26,27 @@ namespace WindowsFormsSqlDemo
             SqlConnection yhteys = new SqlConnection(yhteysmerkkijono);
 
             yhteys.Open();
-            MessageBox.Show("Tietokantayhteys avattu");
+            MessageBox.Show("Tietokantayhteys avattu.");
+
+            string sql = "SELECT * FROM Customers";
+            SqlCommand komento = new SqlCommand(sql, yhteys);
+
+            SqlDataReader lukija = komento.ExecuteReader();
+            while (lukija.Read())
+            {
+                string id = lukija["CustomerID"].ToString();
+                string nimi = lukija["CompanyName"].ToString();
+
+                MessageBox.Show($"{id} = {nimi}");
+
+                if (id == "BONAP")
+                {
+                    break;
+                }
+            }
 
             yhteys.Close();
+            MessageBox.Show("Tietokantayhteys suljettu.");
         }
     }
 }
