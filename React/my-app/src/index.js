@@ -3,13 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Viesti from './Viesti';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <App />
-    <App />
-    <App />
+    <Viesti />
   </React.StrictMode>,
   document.getElementById('root')
 );
