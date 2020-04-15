@@ -12,7 +12,8 @@ function App() {
       </div>
       <Viesti />
 
-      <Laskuri />
+      <Laskuri maksimi={15} />
+      <Laskuri maksimi={5} />
     </div>
   );
 }

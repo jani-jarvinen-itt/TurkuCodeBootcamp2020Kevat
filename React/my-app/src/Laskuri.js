@@ -4,7 +4,7 @@ class Laskuri extends React.Component {
     render() {
 
         let luvut = [];
-        for (let index = 0; index < 10; index++) {
+        for (let index = 0; index < this.props.maksimi; index++) {
             luvut.push(<li>{index + 1}</li>);
         }
 
