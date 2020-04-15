@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 import Viesti from './Viesti';
 import Laskuri from './Laskuri';
+import WebHaku from './WebHaku';
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
         <h1>Oma sovellus</h1>
       </div>
       <Viesti />
+
+      <WebHaku />
 
       <Laskuri maksimi={15} />
       <Laskuri maksimi={5} />
