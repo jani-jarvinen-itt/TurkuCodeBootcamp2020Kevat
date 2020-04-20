@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS-mediakysely-esimerkki</title>
+
+    <style>
+        #laatikko {
+            width: 400px;
+            height: 300 px;
+            border: 1px solid red;
+            text-align: center;
+            padding: 20px;
+            display: block;
+        }
+        
+        @media screen and (min-width: 1000px) {
+            
+            #laatikko {
+                display: none;
+            }
+
+            /*
+            body {
+                background-color: blue;
+            }
+            */
+        }
+        */
+    </style>
+</head>
+
+<body>
+    <h1>CSS-mediakysely-esimerkki</h1>
+    <p>Tämä on tavallista tekstiä.</p>
+
+    <div id="laatikko">
+        <p>Tämä on laatikon sisältöä.</p>
+        <button>Nappi</button>
+    </div>
+</body>
+
+</html>
